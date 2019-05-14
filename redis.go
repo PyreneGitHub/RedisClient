@@ -49,7 +49,7 @@ func (c *RedisClient) write() {
 	c.sendCmd.Reset()
 }
 
-func (c RedisClient) getReply() (string,error) {
+func (c *RedisClient) getReply() (string,error) {
 	n,err := c.conn.Read(c.reply)
 	if err != nil {
 		return "",err
